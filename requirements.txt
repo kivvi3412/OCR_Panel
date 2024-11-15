@@ -1,0 +1,7 @@
+setuptools
+gradio>=5.5.0
+numpy
+pdf2image
+tqdm
+PyMuPDF
+paddleocr

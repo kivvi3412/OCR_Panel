@@ -1,0 +1,20 @@
+services:
+  ocr_service:
+    #    build: .
+    image: ghcr.io/your_github_username/ocr_panel:latest
+    container_name: OCR_Panel
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ "gpu" ]
+    restart: always
+    volumes:
+      - ocr_panel:/app
+    ports:
+      - "7860:7860"
+
+volumes:
+  ocr_panel:
