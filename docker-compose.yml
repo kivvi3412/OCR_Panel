@@ -1,7 +1,7 @@
 services:
   ocr_service:
     #    build: .
-    image: ghcr.io/your_github_username/ocr_panel:latest
+    image: ghcr.io/kivvi3412/ocr_panel:latest
     container_name: OCR_Panel
     deploy:
       resources:
