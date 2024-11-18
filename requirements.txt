@@ -1,7 +1,7 @@
 setuptools
 gradio>=5.5.0
-numpy
+numpy==1.26.4
 pdf2image
-tqdm
+tqdm==4.67.0
 PyMuPDF
-paddleocr
+paddleocr==2.9.1

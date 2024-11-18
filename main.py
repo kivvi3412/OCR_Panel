@@ -29,7 +29,7 @@ class OCRProcessor:
                 use_angle_cls=True,
                 lang="ch",
                 show_log=False,
-                use_gpu=True,
+                # use_gpu=True,
                 det_model_dir=det_model_dir,
                 rec_model_dir=rec_model_dir,
                 cls_model_dir=cls_model_dir,
@@ -260,9 +260,10 @@ if __name__ == "__main__":
         )
         unload_model_button.click(
             fn=unload_model_function,
-            inputs=None,
             outputs=model_status
         )
         timer = gr.Timer(1)
         timer.tick(fn=timer_update_func, inputs=None, outputs=[finished_files, processing_queue, processing_file])
+        demo.load(fn=lambda: "模型已加载" if processor.ocr_processor.ocr is not None else "模型未加载",
+                  outputs=model_status)
     demo.launch(server_name="0.0.0.0", share=False)

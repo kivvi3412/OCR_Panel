@@ -13,7 +13,9 @@ RUN apt-get update && apt-get install -y \
     poppler-utils \
     && rm -rf /var/lib/apt/lists/*
 
-
+# MacOS
+# RUN python3 -m pip install paddlepaddle==2.6.1 -i https://pypi.tuna.tsinghua.edu.cn/simple
+# Linux
 RUN python3 -m pip install paddlepaddle-gpu==2.6.1.post117 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
